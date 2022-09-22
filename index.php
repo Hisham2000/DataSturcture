@@ -1,23 +1,47 @@
 <?php
 
-include('DataStructure/Stack.php');
+//The stack Start Here
 
-use App\DataStructure\Stack;
+// include('DataStructure/Stack.php');
+// use App\DataStructure\Stack;
 
-$stack = new Stack(4);
+// $stack = new Stack(4);
 
 
-for($i = 1; !$stack->isFull(); $i++)
+// for($i = 1; !$stack->isFull(); $i++)
+// {
+//     $stack->push($i);
+//     echo "The current is : ". $stack->current();
+//     echo "<br>";
+// }
+
+// while(!$stack->isEmpty())
+// {
+//     echo "The current is : ". $stack->current();
+//     echo "<br>";
+//     echo $stack->pop();
+//     echo "<br>";    
+// }
+
+//End of Stack
+
+//Start the Circular Queue
+
+include('DataStructure/Queue.php');
+
+use App\DataStructure\Queue;
+
+$queue = new Queue(5);
+
+for($i = 1 ; !$queue->isFull(); $i++)
 {
-    $stack->push($i);
-    echo "The current is : ". $stack->current();
-    echo "<br>";
+    $queue->enqueue($i);
 }
 
-while(!$stack->isEmpty())
+while(!$queue->isEmpty())
 {
-    echo "The current is : ". $stack->current();
-    echo "<br>";
-    echo $stack->pop();
-    echo "<br>";    
+    echo $queue->dequeue()."<br>";
 }
+
+// End of The Queue
+
